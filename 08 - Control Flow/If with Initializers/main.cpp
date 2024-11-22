@@ -1,6 +1,31 @@
 #include <iostream>
 
-int main(){
-    std::cout << "Hello World" << std::endl;
+int main()
+{
+
+    bool go{true};
+
+    // if with initialization, the variable is only available in the if block
+    if (int speed{5}; go)
+    {
+        std::cout << "speed : " << speed << std::endl;
+
+        if (speed > 5)
+        {
+            std::cout << "Slow down!" << std::endl;
+        }
+        else
+        {
+            std::cout << "All good!" << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "speed : " << speed << std::endl;
+        std::cout << "Stop" << std::endl;
+    }
+
+    // std::cout << "Out of the if block , speed : " << speed << std::endl;
+
     return 0;
 }

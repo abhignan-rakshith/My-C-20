@@ -1,0 +1,8 @@
+[
+{
+  "directory": "F:/Dev/My_C-20/09 - Loops/ForLoopWithInitCondition/build",
+  "command": "C:\\mingw64\\bin\\c++.exe -g -std=gnu++20 -o CMakeFiles\\ForLoopWithInitCondition.dir\\main.cpp.obj -c \"F:\\Dev\\My_C-20\\09 - Loops\\ForLoopWithInitCondition\\main.cpp\"",
+  "file": "F:\\Dev\\My_C-20\\09 - Loops\\ForLoopWithInitCondition\\main.cpp",
+  "output": "CMakeFiles\\ForLoopWithInitCondition.dir\\main.cpp.obj"
+}
+]

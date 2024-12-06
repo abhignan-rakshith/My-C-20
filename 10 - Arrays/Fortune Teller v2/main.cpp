@@ -19,7 +19,7 @@ void displayProgressBar(const std::string &message)
     std::cout << message;
     for (int i = 0; i < 20; ++i)
     {
-        std::cout << CYAN << "▓" << RESET << std::flush;
+        std::cout << CYAN << "#" << RESET << std::flush; // Changed from ▓ to #
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
     std::cout << std::endl;
@@ -55,7 +55,6 @@ std::string getZodiacSign(const std::string &name)
         "Leo", "Virgo", "Libra", "Scorpio",
         "Sagittarius", "Capricorn", "Aquarius", "Pisces"};
 
-    // Generate a "random" but consistent zodiac sign based on name
     size_t nameSum = 0;
     for (char c : name)
     {
@@ -66,7 +65,7 @@ std::string getZodiacSign(const std::string &name)
 
 int main()
 {
-    std::srand(static_cast<unsigned int>(std::time(0))); // Seed
+    std::srand(static_cast<unsigned int>(std::time(0)));
 
     const std::array<std::string, 15> predictions{{"a lot of kids running in the backyard!",
                                                    "a lot of empty coffee cups on your work table - you're working hard!",
@@ -91,7 +90,7 @@ int main()
                                                      "A loop you write will bring infinite happiness."}};
 
     std::string name;
-    std::cout << MAGENTA << "✨ Welcome to the Mystical Fortune Teller ✨" << RESET << std::endl;
+    std::cout << MAGENTA << "*** Welcome to the Mystical Fortune Teller ***" << RESET << std::endl;
     std::cout << YELLOW << "What's your name, seeker of fortune: " << RESET;
     std::getline(std::cin, name);
 
@@ -102,7 +101,7 @@ int main()
     while (!end)
     {
         std::cout << "\n"
-                  << CYAN << "🔮 Gazing into the crystal ball..." << RESET << std::endl;
+                  << CYAN << ">>> Gazing into the crystal ball..." << RESET << std::endl;
         displayCrystalBall();
         displayProgressBar("Reading the mystical signs...");
 
@@ -114,10 +113,10 @@ int main()
 
         // Bonus fortune cookie
         size_t cookie_num = static_cast<size_t>(std::rand() % fortuneCookies.size());
-        std::cout << MAGENTA << "\n🥠 Your bonus fortune cookie says: " << fortuneCookies[cookie_num] << RESET << std::endl;
+        std::cout << MAGENTA << "\n[Fortune Cookie]: " << fortuneCookies[cookie_num] << RESET << std::endl;
 
         // Lucky numbers
-        std::cout << BLUE << "\n🎲 Your lucky numbers for today are: ";
+        std::cout << BLUE << "\n[Lucky Numbers]: ";
         for (int i = 0; i < 3; ++i)
         {
             std::cout << (std::rand() % 100 + 1) << " ";
@@ -128,13 +127,13 @@ int main()
                   << YELLOW << "Shall I gaze into the crystal ball again? (Y | N): " << RESET;
         char go_on;
         std::cin >> go_on;
-        std::cin.ignore(); // Clear the newline from input buffer
+        std::cin.ignore();
 
         end = ((go_on == 'Y') || (go_on == 'y')) ? false : true;
     }
 
-    std::cout << GREEN << "\n🌟 The spirits are getting tired. Until we meet again, " << name
-              << "! May your code be bug-free and your compile times swift! 🌟" << RESET << std::endl;
+    std::cout << GREEN << "\n*** The spirits are getting tired. Until we meet again, " << name
+              << "! May your code be bug-free and your compile times swift! ***" << RESET << std::endl;
 
     return 0;
 }

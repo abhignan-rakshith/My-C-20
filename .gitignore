@@ -11,6 +11,7 @@
 *.sln.docstates
 # executable file
 **/rooster.exe
+**/core.exe
 
 #.vscode
 **/.vscode/

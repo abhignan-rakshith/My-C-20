@@ -2,15 +2,19 @@
 
 int main() {
 
-	int number1 = 15; // Decimal
-	int number2 = 017; // Octal
-	int number3 = 0X0F; // Hexadecimal
-	int number4 = 0b00001111; // Binary
+	// Braced Initialization
+	int elephant_count; // Junk
+	int lion_count{}; // 0
+	int dog_count{ 10 };
+	int animal_count{ lion_count + dog_count };
+	// int cut_off {2.9}; //Wont Compile
 
-	std::cout << "number 1: " << number1 << std::endl;
-	std::cout << "number 2: " << number2 << std::endl;
-	std::cout << "number 3: " << number3 << std::endl;
-	std::cout << "number 4: " << number4 << std::endl;
+	// Functional Initialization - ()
 
+	// Assignment Initialization - =
+	std::cout << "Animal Count " << animal_count << std::endl;
+
+	// Check the size with sizeof
+	std::cout << "size of animal_count: " << sizeof(animal_count) << std::endl; // 4 bytes
 	return 0;
 }
